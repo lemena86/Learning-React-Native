@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Linking } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import Card from '../Card';
 import CardSection from '../CardSection';
+import Button from '../Button';
 
 const AlbumDetail = ({ album }) => {
   // eslint-disable-next-line
-  const { title, artist, thumbnail_image, image } = album;
+  const { title, artist, thumbnail_image, image, url } = album;
   const {
     headerContentStyles,
     thumbnailStyle,
@@ -28,6 +29,9 @@ const AlbumDetail = ({ album }) => {
       </CardSection>
       <CardSection>
         <Image style={imageStyle} source={{ uri: image }} />
+      </CardSection>
+      <CardSection>
+        <Button onPress={() => Linking.openURL(url)}>Buy Me</Button>
       </CardSection>
     </Card>
   );
