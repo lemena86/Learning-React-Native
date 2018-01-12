@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  errorTextStyle: {
-    fontSize: 20,
-    alignSelf: 'center',
-    color: 'red'
+  spinnerStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignitems: 'center'
   }
 });
